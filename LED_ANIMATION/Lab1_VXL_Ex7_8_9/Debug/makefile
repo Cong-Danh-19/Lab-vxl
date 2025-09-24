@@ -64,8 +64,8 @@ all: main-build
 main-build: Lab1_VXL_Ex7_8_9.elf secondary-outputs
 
 # Tool invocations
-Lab1_VXL_Ex7_8_9.elf: $(OBJS) $(USER_OBJS) D:\STM32CubeIDE_1.7.0\STM32CubeIDE\Lab1_VXL_Ex7\STM32F103C6UX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Lab1_VXL_Ex7_8_9.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\STM32CubeIDE_1.7.0\STM32CubeIDE\Lab1_VXL_Ex7\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1_VXL_Ex7_8_9.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Lab1_VXL_Ex7_8_9.elf: $(OBJS) $(USER_OBJS) D:\STM32CubeIDE_1.7.0\STM32CubeIDE\LED_ANIMATION\Lab1_VXL_Ex7_8_9\STM32F103C6UX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Lab1_VXL_Ex7_8_9.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\STM32CubeIDE_1.7.0\STM32CubeIDE\LED_ANIMATION\Lab1_VXL_Ex7_8_9\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1_VXL_Ex7_8_9.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
