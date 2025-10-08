@@ -59,9 +59,9 @@ static void MX_TIM2_Init(void);
 int TIMER_CYCLE = 10;
 int TIMER1_CYCLE = 100;
 const int MAX_LED_MATRIX = 8;
-int hour = 23;
+int hour = 16;
 int minute = 59;
-int second = 50;
+int second = 55;
 
 int timer0_counter = 0;
 int timer0_flag = 0;
@@ -75,8 +75,8 @@ int timer2_flag = 0;
 
 int index_led_matrix = 0;
 int t=0;
-uint8_t matrix_buffer [8] = {0xFF, 0x03, 0x01, 0xCC, 0xCC, 0x01, 0x03, 0xFF};
-
+uint8_t matrix_buffer [8] = {0xFF, 0x03, 0x01, 0xCC, 0xCC, 0x01, 0x03, 0xFF};  			//A
+//uint8_t matrix_buffer[10] = {0xFF,0xFF,0xFF, 0xC0, 0x9F, 0x3F, 0x3F, 0x9F, 0xC0, 0xFF};		//V
 uint16_t list_ENM[8] = {
 	ENM0_Pin, ENM1_Pin, ENM2_Pin, ENM3_Pin,
 	ENM4_Pin, ENM5_Pin, ENM6_Pin, ENM7_Pin
@@ -90,7 +90,9 @@ void updateLEDMatrix(int index) {
 		for(int i =0; i < MAX_LED_MATRIX; ++i){
 				HAL_GPIO_WritePin(GPIOB, ROW0_Pin << i, (matrix_buffer[(index+t)%10] >> i) & 0x01);
 		}
+
 }
+
 void setTimer0(int duration) {
     timer0_counter = duration / TIMER_CYCLE;
     timer0_flag = 0;
@@ -122,7 +124,7 @@ void display7SEG(int num){
 	for(int i=0;i<7;i++){
 		HAL_GPIO_WritePin(GPIOB, SEG0_Pin<<i,(led7segm[num]>>i)&1);
 	}
-	t = (t+1)% 24;
+	t = (t+1) % 24;
 }
 const int MAX_LED = 4;
 int index_led = 0;
@@ -231,6 +233,7 @@ int main(void)
          if(timer2_flag == 1){
         	  		  updateLEDMatrix(index_led_matrix++);
         	  		  index_led_matrix = index_led_matrix % MAX_LED_MATRIX;
+
         	  		  setTimer2(100);
          }
      }

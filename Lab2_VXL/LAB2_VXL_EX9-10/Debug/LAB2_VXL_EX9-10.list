@@ -159,6 +159,7 @@ void updateLEDMatrix(int index) {
  80001e4:	4293      	cmp	r3, r2
  80001e6:	dbd4      	blt.n	8000192 <updateLEDMatrix+0x46>
 		}
+
 }
  80001e8:	bf00      	nop
  80001ea:	bf00      	nop
@@ -174,6 +175,7 @@ void updateLEDMatrix(int index) {
  8000208:	40010c00 	.word	0x40010c00
 
 0800020c <setTimer0>:
+
 void setTimer0(int duration) {
  800020c:	b480      	push	{r7}
  800020e:	b083      	sub	sp, #12
@@ -375,7 +377,7 @@ void display7SEG(int num){
  800037a:	2b06      	cmp	r3, #6
  800037c:	dde3      	ble.n	8000346 <display7SEG+0x1a>
 	}
-	t = (t+1)% 24;
+	t = (t+1) % 24;
  800037e:	4b0c      	ldr	r3, [pc, #48]	; (80003b0 <display7SEG+0x84>)
  8000380:	681b      	ldr	r3, [r3, #0]
  8000382:	1c59      	adds	r1, r3, #1
@@ -754,6 +756,7 @@ int main(void)
  80005fa:	1a9b      	subs	r3, r3, r2
  80005fc:	4a0b      	ldr	r2, [pc, #44]	; (800062c <main+0x190>)
  80005fe:	6013      	str	r3, [r2, #0]
+
         	  		  setTimer2(100);
  8000600:	2064      	movs	r0, #100	; 0x64
  8000602:	f7ff fe37 	bl	8000274 <setTimer2>

@@ -1,6 +1,17 @@
-20:51:37 **** Incremental Build of configuration Debug for project LAB2_VXL_EX3 ****
+16:01:03 **** Incremental Build of configuration Debug for project LAB2_VXL_EX3 ****
 make -j4 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'update7SEG':
+../Core/Src/main.c:73:3: warning: implicit declaration of function 'display7SEG' [-Wimplicit-function-declaration]
+   73 |   display7SEG(led_buffer[0]);
+      |   ^~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:138:6: warning: conflicting types for 'display7SEG'
+  138 | void display7SEG(int num){
+      |      ^~~~~~~~~~~
+../Core/Src/main.c:73:3: note: previous implicit declaration of 'display7SEG' was here
+   73 |   display7SEG(led_buffer[0]);
+      |   ^~~~~~~~~~~
 arm-none-eabi-gcc -o "LAB2_VXL_EX3.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\STM32CubeIDE_1.7.0\STM32CubeIDE\Lab2_VXL\LAB2_VXL_EX3\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LAB2_VXL_EX3.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: LAB2_VXL_EX3.elf
  
@@ -9,15 +20,15 @@ arm-none-eabi-objdump -h -S  LAB2_VXL_EX3.elf  > "LAB2_VXL_EX3.list"
 arm-none-eabi-objcopy  -O ihex  LAB2_VXL_EX3.elf  "LAB2_VXL_EX3.hex"
 arm-none-eabi-objcopy  -O binary  LAB2_VXL_EX3.elf  "LAB2_VXL_EX3.bin"
    text	   data	    bss	    dec	    hex	filename
-   7448	     44	   1644	   9136	   23b0	LAB2_VXL_EX3.elf
+   7720	     44	   1644	   9408	   24c0	LAB2_VXL_EX3.elf
 Finished building: default.size.stdout
- 
 Finished building: LAB2_VXL_EX3.hex
+ 
 Finished building: LAB2_VXL_EX3.bin
- 
- 
 Finished building: LAB2_VXL_EX3.list
  
+ 
+ 
 
-20:51:40 Build Finished. 0 errors, 0 warnings. (took 3s.794ms)
+16:01:05 Build Finished. 0 errors, 2 warnings. (took 1s.187ms)
 
