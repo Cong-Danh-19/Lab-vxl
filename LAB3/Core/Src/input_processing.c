@@ -200,6 +200,9 @@ void fsm_for_input_processing(){
 			if (RED >= 99) RED = GREEN + 1;
 			else RED++;
 		}
+		if (isButtonPressed(0) == 1){     // BTN1: go to next mode immediately
+		        status = MODE3;
+		    }
 		if (isButtonPressed(2) == 1){
 			status = AUTO_RED;
 //			GREEN = RED - AMBER;
@@ -265,6 +268,9 @@ void fsm_for_input_processing(){
 			if (AMBER >= 4) AMBER = 1;
 			else AMBER++;
 		}
+		if (isButtonPressed(0) == 1){     // BTN1: go to next mode immediately
+		        status = MODE4;
+		    }
 		if (isButtonPressed(2) == 1){
 			status = AUTO_AMBER;
 
@@ -331,6 +337,9 @@ void fsm_for_input_processing(){
 			if (GREEN >= 99) GREEN = RED - AMBER;
 			else GREEN++;
 		}
+		if (isButtonPressed(0) == 1){     // BTN1: go to next mode immediately
+		        status = MODE1;
+		    }
 		if (isButtonPressed(2) == 1){
 			status = AUTO_GREEN;
 
