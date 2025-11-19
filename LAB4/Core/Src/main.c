@@ -138,9 +138,9 @@ int main(void)
     // Task 4: Chu kỳ 2.0s (2000ms)
     SCH_Add_Task(Task_Toggle_YELLOW2, 0, 200, 0); // (200 * 10ms = 2.0s)
     SCH_Add_Task(Task_Toggle_RED2, 0, 250, 0); // 2.5s
-//     SCH_Add_Task(timerRun,	0,	1,0);
-//     SCH_Add_Task(getKeyInput, 0, 1,0);
-   // SCH_Add_Task(fsm_auto_2way_run, 0, 500, 0);
+     SCH_Add_Task(timerRun,	0,	1,0);
+     SCH_Add_Task(getKeyInput, 0, 1,0);
+    SCH_Add_Task(fsm_auto_2way_run, 0, 500, 0);
   /* USER CODE END 2 */
 
   /* Infinite loop */
