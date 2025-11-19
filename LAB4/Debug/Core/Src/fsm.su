@@ -1,0 +1,10 @@
+fsm.c:33:6:display7SEG	32	static
+fsm.c:41:6:update7SEG	24	static
+fsm.c:69:6:Scan_7seg	16	static
+fsm.c:87:6:setTrafficLED	24	static
+fsm.c:99:6:enterState	32	static
+fsm.c:110:6:check_button	16	static
+fsm.c:182:5:checkErrorTraffic	4	static
+fsm.c:189:6:normal_mode	32	static
+fsm.c:250:6:modify_mode	32	static
+fsm.c:285:6:fsm_auto_2way_run	8	static
